@@ -6,19 +6,26 @@
 - zlib压缩库 `yum install -y zlib zlib-devel`
 
 - OpenSSL开发库: 为了指定版本，使用源码安装 
- `wget https://www.openssl.org/source/openssl-1.1.1n.tar.gz`
- `tar -zxvf openssl-1.1.1n.tar.gz`
- `cd openssl-1.1.1n`
- `mkdir /usr/local/openssl`
- `./config --prefix=/usr/local/openssl`
- `.config -t`
- `make`
- `make install`
- 添加系统配置
- 创建文件 `vim /etc/ld.so.conf.d/openssl.conf`
- 填入内容 `/usr/local/openssl`
- 加载配置： ldconfig
- 
+`wget https://www.openssl.org/source/openssl-1.1.1n.tar.gz`
+`tar -zxvf openssl-1.1.1n.tar.gz`
+`cd openssl-1.1.1n`
+`mkdir /usr/local/openssl`
+`./config --prefix=/usr/local/openssl`
+`./config -t`
+`make`
+`make install`
+添加系统配置
+创建文件 `vim /etc/ld.so.conf.d/openssl.conf`
+填入内容 `/usr/local/openssl`
+加载配置：ldconfig
+
+## 下载并解压nginx
+```shell
+wget https://nginx.org/download/nginx-1.21.6.tar.gz`
+tar -zxvf nginx-1.21.6.tar.gz
+cd nginx-1.21.6
+```
+
 ## 安装目录规划
 - nginx安装目录 `/usr/local/nginx`
 - nginx配置文件目录 `/usr/local/nginx/nginx.conf`
